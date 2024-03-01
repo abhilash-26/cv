@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {setValues} from '../redux/features/cvdetails';
 import Input from '../components/Input';
@@ -30,6 +31,7 @@ function Admin() {
 	const [skill, setSkill] = useState([]);
 	const [hobby, setHobby] = useState([]);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const handleChange = (e) => {
 		setProfile({[e.target.name]: e.target.value});
 	};
@@ -46,7 +48,7 @@ function Admin() {
 		localStorage.setItem('hobby', hobbytring);
 		let jobString = JSON.stringify(job);
 		localStorage.setItem('job', jobString);
-		alert('Details Saved');
+		navigate('/');
 	};
 	const handleAddJob = () => {
 		setJob([...job, {jobTitle: '', jobDetails: '', company: ''}]);

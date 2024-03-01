@@ -13,7 +13,7 @@ function Login() {
 	};
 	return (
 		<div className='flex flex-col justify-center content-center items-center text-center'>
-			<p className='font-serif text-4xl'>Sign In</p>
+			<p className='font-serif text-4xl m-5'>Sign In To Access Admin Tab</p>
 			{loginState == 1 ? (
 				<button
 					className='bg-red-500 p-2 pl-4 pr-4 rounded-lg text-white font-medium font-serif'
